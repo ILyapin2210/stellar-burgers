@@ -22,9 +22,8 @@ import {
   OrderInfo,
   ProtectedRoute
 } from '@components';
-import { useSelector } from 'react-redux';
 import { getUser, selectIsAuth } from '../../services/slices/userSlice';
-import { useDispatch } from '../../services/store';
+import { useDispatch, useSelector } from '../../services/store';
 import { fetchIngredients } from '../../services/slices/ingredientsSlice';
 
 const App = () => {

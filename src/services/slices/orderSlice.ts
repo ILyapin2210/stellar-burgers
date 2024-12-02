@@ -44,7 +44,6 @@ const orderSlice = createSlice({
       .addCase(orderBurger.fulfilled, (state, action) => {
         state.isRequested = false;
         state.data = action.payload;
-        console.log(state.data);
       });
   },
   selectors: {
