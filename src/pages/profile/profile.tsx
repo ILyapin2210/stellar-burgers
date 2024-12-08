@@ -7,7 +7,7 @@ import {
   selectUser,
   selectIsLoading,
   updateUser
-} from '../../services/slices/userSlice';
+} from '../../services/slices/user-slice/userSlice';
 
 export const Profile: FC = () => {
   const dispatch = useDispatch();

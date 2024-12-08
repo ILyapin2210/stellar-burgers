@@ -1,7 +1,7 @@
 import { FC, ReactElement, useLayoutEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectIsAuth } from '../../services/slices/userSlice';
+import { selectIsAuth } from '../../services/slices/user-slice/userSlice';
 
 interface ProtectedRouteProps {
   isPublic?: boolean;

@@ -8,7 +8,7 @@ export type TBunIngredient = TIngredient & {
 
 type TIngredientId = string;
 
-type TConstructorItemsState = {
+export type TConstructorItemsState = {
   bun: TBunIngredient | null;
   ingredients: TConstructorIngredient[];
 };
