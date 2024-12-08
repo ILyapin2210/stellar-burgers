@@ -8,11 +8,11 @@ import {
   getUserApi,
   resetPasswordApi,
   updateUserApi
-} from '@api';
+} from '../../../utils/burger-api';
 import { TUser } from '@utils-types';
-import { deleteCookie, setCookie } from '../../utils/cookie';
+import { deleteCookie, setCookie } from '../../../utils/cookie';
 
-type TUserState = {
+export type TUserState = {
   user: TUser;
   isAuth: boolean;
   isLoading: boolean;
@@ -127,7 +127,7 @@ const userSlice = createSlice({
       .addCase(resetPassword.fulfilled, (state) => {
         state.isLoading = false;
       })
-      .addCase(resetPassword.rejected, (state, action) => {
+      .addCase(resetPassword.rejected, (state) => {
         state.isLoading = false;
       })
       .addCase(logoutUser.pending, (state) => {
