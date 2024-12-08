@@ -13,25 +13,24 @@ import {
   userName
 } from './constants';
 
-const URL = 'https://norma.nomoreparties.space/api';
-
 describe('Тест конструктора бургеров', () => {
   beforeEach(() => {
     cy.fixture('ingredients.json').as('ingredientsData');
     cy.fixture('user.json').as('user');
     cy.fixture('order.json').as('order');
 
-    cy.intercept('GET', `${URL}/ingredients`, {
+    cy.intercept('GET', `api/ingredients`, {
       fixture: 'ingredients.json'
     }).as('getIngredients');
-    cy.intercept('GET', `${URL}/auth/user`, {
+    cy.intercept('GET', `api/auth/user`, {
       fixture: 'user.json'
     }).as('getUser');
-    cy.intercept('POST', `${URL}/orders`, {
+    cy.intercept('POST', `api/orders`, {
       fixture: 'order.json'
     }).as('createOrder');
+  
 
-    cy.visit('http://localhost:8080/');
+    cy.visit('/');
 
     cy.wait('@getIngredients');
   });
@@ -114,6 +113,20 @@ describe('Тест конструктора бургеров', () => {
           .click();
 
         cy.get(orderButton).click();
+
+        cy.wait('@createOrder').its('response.body').should('deep.equal', 
+          {
+          "success": true,
+          "order": {
+            "_id": "1",
+            "status": "created",
+            "name": "Заказ",
+            "createdAt": "2024-12-07T00:00:00.000Z",
+            "updatedAt": "2024-12-07T00:00:00.000Z",
+            "number": 1,
+            "ingredients": ["Ингредиент", "Ингредиент"]
+          }
+        });
 
         cy.get(modal).should('be.visible');
 
