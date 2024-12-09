@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from '../..//services/store';
 import {
   selectConstructorItems,
   resetItems
-} from '../../services/slices/constructorItemsSlice';
+} from '../../services/slices/constructor-slice/constructorItemsSlice';
 import {
   orderBurger,
   selectIsOrderRequested,
   selectOrder,
   resetOrder
-} from '../../services/slices/orderSlice';
-import { selectIsAuth } from '../../services/slices/userSlice';
+} from '../../services/slices/order-slice/orderSlice';
+import { selectIsAuth } from '../../services/slices/user-slice/userSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export const BurgerConstructor: FC = () => {

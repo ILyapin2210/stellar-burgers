@@ -22,9 +22,12 @@ import {
   OrderInfo,
   ProtectedRoute
 } from '@components';
-import { getUser, selectIsAuth } from '../../services/slices/userSlice';
+import {
+  getUser,
+  selectIsAuth
+} from '../../services/slices/user-slice/userSlice';
 import { useDispatch, useSelector } from '../../services/store';
-import { fetchIngredients } from '../../services/slices/ingredientsSlice';
+import { fetchIngredients } from '../../services/slices/ingredients-slice/ingredientsSlice';
 
 const App = () => {
   const navigate = useNavigate();

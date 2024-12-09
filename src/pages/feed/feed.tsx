@@ -7,7 +7,7 @@ import {
   fetchFeed,
   selectOrders,
   selectIsFeedLoading
-} from '../../services/slices/feedsSlice';
+} from '../../services/slices/feed-slice/feedsSlice';
 
 export const Feed: FC = () => {
   const [_, forceUpdate] = useReducer((x) => x + 1, 0);

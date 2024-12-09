@@ -5,12 +5,12 @@ import { TIngredient } from '@utils-types';
 import { useSelector } from 'react-redux';
 import { useDispatch } from '../../services/store';
 import { useLocation } from 'react-router-dom';
-import { selectIngredients } from '../../services/slices/ingredientsSlice';
+import { selectIngredients } from '../../services/slices/ingredients-slice/ingredientsSlice';
 import {
   getOrderByNumber,
   selectFeaturedOrder,
   clearFeaturedOrder
-} from '../../services/slices/userOrdersSlice';
+} from '../../services/slices/user-order-slice/userOrdersSlice';
 
 export const OrderInfo: FC = () => {
   /** TODO: взять переменные orderData и ingredients из стора */
