@@ -40,6 +40,7 @@ describe('Тест конструктора бургеров', () => {
       cy.get(burgerConstructor).should('exist');
       cy.get(burgerConstructor).should('not.contain', bunTop);
       cy.get(burgerConstructor).should('not.contain', bunBottom);
+      cy.wait(1000);
       cy.get(ingredientBun)
         .first()
         .parent()
