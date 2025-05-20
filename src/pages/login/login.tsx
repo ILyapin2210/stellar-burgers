@@ -5,7 +5,7 @@ import {
   loginUser,
   selectIsAuth,
   selectIsLoading
-} from '../../services/slices/userSlice';
+} from '../../services/slices/user-slice/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { Preloader } from '@ui';
 import { useLocation } from 'react-router-dom';
@@ -23,7 +23,7 @@ export const Login: FC = () => {
   const location = useLocation();
 
   useLayoutEffect(() => {
-    if (isAuth) navigate(location?.state.from || '/');
+    if (isAuth) navigate(location?.state?.from || '/');
   }, [isAuth, location, navigate]);
 
   const handleSubmit = (e: SyntheticEvent) => {
